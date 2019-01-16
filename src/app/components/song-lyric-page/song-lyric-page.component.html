@@ -1,0 +1,42 @@
+<div class="container" *ngIf="isLoading">
+  <div class="row">
+    <div class="col s12" style="margin-top:20%;">&nbsp;</div>
+    <div class="col s12">
+    </div>
+    <mz-spinner class=" col s3 offset-s5 " [color]="'blue'" [size]="'big'">
+    </mz-spinner>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s6 offset-s3">
+    <mz-card class="cyan darken-4 white-text" [horizontal]="true" [hoverable]="true">
+      <mz-card-image>
+        <!-- <img src="../../../assets/logo/favicon.png  " /> -->
+        <!-- <button mz-button mz-halfway-fab [float]="true">ICON</button> -->
+      </mz-card-image>
+      <!-- <mz-card-image-title>
+    Card Image Title
+  </mz-card-image-title> -->
+      <mz-card-title>
+        <strong>
+          <p class="text-lighten-5 red-text">Song: <span class="text-lighten-3 yellow-text">{{track_info.track_name}}</span></p>
+        </strong>
+      </mz-card-title>
+      <mz-card-content>
+        <p>Artist: <span class="text-lighten-3 red-text">{{track_info.artist_name}}</span></p>
+      </mz-card-content>
+      <mz-card-action>
+        <a [routerLink]="['/home']"></a>
+      </mz-card-action>
+
+      <mz-card-content>
+        <br>
+        Lyrics:
+        <p>{{lyric}}</p>
+      </mz-card-content>
+    </mz-card>
+    </div>
+  </div>
+</div>

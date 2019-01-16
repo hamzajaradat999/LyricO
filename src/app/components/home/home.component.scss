@@ -1,0 +1,15 @@
+$mt : 5px;
+
+.mt{
+     
+      margin-top: $mt
+}
+
+.same{
+
+      min-height: 0px;
+      margin-bottom: 40px;
+}
+
+::placeholder { color: rgb(148, 145, 145); font-size: 1.5em; }
+ 

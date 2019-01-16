@@ -1,0 +1,98 @@
+<div class="container" *ngIf="isLoading">
+    <div class="row">
+      
+      <div class="col s12" style="margin-top:30%;">&nbsp;</div>
+      <mz-spinner  class=" col s3 offset-s5 " [color]="'blue'" [size]="'big'">
+      </mz-spinner>
+    </div>
+  </div>
+
+<div class="container" *ngIf="!isLoading">
+  <div class="col s6 mt"><img src="../../../assets/logo/instagram_profile_image.png" width="30%" alt=""></div>
+  <div class="row">
+    <h1>Find your favourite song's lyrics instantly! </h1>
+
+    <mz-tab [fixedTabWidth]="'true'">
+
+      <mz-tab-item [label]="'By Artist'" (click)="switcher(1)">
+
+        <mz-input-container>
+
+          <input mz-input placeholder="Artist Name Here" length="150" type="search" [(ngModel)]="artistName" name="artistName"
+            width="2001px">
+
+          <button [routerLink]="['../songPage']" mz-button type="submit" (click)="getArtist()">
+            <!-- Sends to song-page -->
+            Go
+          </button>
+
+        </mz-input-container>
+
+      </mz-tab-item>
+
+      <mz-tab-item [label]="'By Song'" (click)="switcher(2)">
+        <mz-input-container>
+
+          <input mz-input placeholder="Song Title Here" length="150" type="search" [(ngModel)]="trackName" name="trackName"
+            width="2001px">
+
+          <button [routerLink]="['../songPage']" mz-button type="submit" (click)="getTrack()">
+            Go
+          </button>
+
+        </mz-input-container>
+      </mz-tab-item>
+      <!-- <mz-tab-item [label]="'By Luck'" (click)="switcher(3)">
+        <mz-input-container>
+
+          <input mz-input placeholder="Random Track Id Here ex:15246836" length="150" type="search" [(ngModel)]="artistName"
+            name="artistName" width="2001px">
+
+          <button [routerLink]="['../songPage']" mz-button type="submit" (click)="getArtist()">
+            Go
+          </button>
+
+
+        </mz-input-container>
+      </mz-tab-item> -->
+      <mz-tab-item [label]="'Change Top Country'">
+        <mz-input-container>
+
+          <mz-select-container>
+            <select mz-select [(ngModel)]="countryName" name="countryName" id="select" [label]="'Label'" [placeholder]="'Country '" >
+
+              <option class="left circle">USA</option>
+              <option class="left circle">Egypt</option>
+              <option class="left circle">Argentina</option>
+
+            </select>
+          </mz-select-container>
+
+          <button [routerLink]="['../home']" mz-button type="submit" (click)="changeCountry()">
+            Go
+          </button>
+
+
+        </mz-input-container>
+      </mz-tab-item>
+    </mz-tab>
+
+
+
+    <h2>Here is the Top:{{tracks.length}} in: {{countryName}}</h2>
+    <app-song-card class="col s6 same" *ngFor="let track of tracks let i = index" [rank]="i"  [tracks]="track"></app-song-card>
+  </div>
+
+</div>
+
+
+
+<!-- <mz-input-container>
+
+  <input mz-input [label]="''" [validate]="true" [dataError]="'Email is invalid'" [dataSuccess]="'Email is valid'"
+    id="email-input" placeholder="Song Title Here" length="150" type="search" [(ngModel)]="artistName" name="artistName">
+
+  <button [routerLink]="['../songPage']" mz-button type="submit" (click)="getArtist()">
+    Go
+  </button>
+</mz-input-container> -->

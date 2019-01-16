@@ -1,0 +1,24 @@
+<mz-card class=" myClass" [horizontal]="true" [hoverable]="true">
+  <mz-card-image>
+    <!-- <img src="../../../assets/logo/favicon.png  " /> -->
+    <!-- <button mz-button mz-halfway-fab [float]="true">ICON</button> -->
+  </mz-card-image>
+  <!-- <mz-card-image-title>
+    Card Image Title
+  </mz-card-image-title> -->
+  <mz-card-title>
+    <strong *ngIf="allowRank"><b>Rank: <span class="text-lighten-2 grey-text">{{rank+1}}</span></b></strong>
+   
+    <strong>
+      <p class="text-lighten-1 black-text"><i class="small material-icons">audiotrack</i><span class="light-blue-text text-lighten-4">Track:</span>{{tracks.track.track_name}}</p>
+    </strong>
+  </mz-card-title>
+  <mz-card-content>
+
+    <p><i class="small material-icons">person_outline</i><span class="light-blue-text text-lighten-4">Artist:</span>
+      {{tracks.track.artist_name}}</p>
+  </mz-card-content>
+  <mz-card-action>
+    <a class="text-lighten-1 red-text" [routerLink]="['/songLyricPage']" (click)="getLyrics()">Lyrics</a>
+  </mz-card-action>
+</mz-card>

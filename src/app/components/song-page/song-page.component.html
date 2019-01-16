@@ -1,0 +1,15 @@
+<div class="container" *ngIf="isLoading">
+    <div class="row">
+      <div class="col s12" style="margin-top:30%;">&nbsp;</div>
+      <mz-spinner  class=" col s3 offset-s5 " [color]="'yellow'" [size]="'big'">
+      </mz-spinner>
+    </div>
+  </div>
+
+<div class="container" *ngIf="!isLoading">
+  <div class="row">
+    <div class="col s12">
+      <app-song-card class="col s4 same" *ngFor="let track of tracks;" [tracks]="track"></app-song-card>
+    </div>
+  </div>
+</div>

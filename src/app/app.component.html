@@ -1,0 +1,52 @@
+<mz-navbar [navbarClass]="'indigo lighten-5'">
+  <div class="row">
+    <mz-navbar-item-container class="col s1" [align]="'right'">
+      <mz-navbar-item><button class="btn-floating btn-large scale-transition blue lighten-4 black-text " mz-button id="btn-sidenav-demo">
+          <i class="large material-icons">menu</i>
+        </button></mz-navbar-item>
+    </mz-navbar-item-container>
+    <mz-navbar-item-container class=" ">
+      <mz-navbar-item><button mz-button class=" red btn-floating btn-large scale-transition orange lighten-1 black-text"
+          routerLink="../home">
+          <i class="large material-icons">home</i>
+          Home
+        </button></mz-navbar-item>
+    </mz-navbar-item-container>
+  </div>
+</mz-navbar>
+<mz-sidenav [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'">
+  <mz-sidenav-header>
+    <div>
+      <div class="row  ">
+        <div class="col s3 offset-s4 "><b class="text-lighten-2 deep-purple-text ">LyricO</b></div>
+      </div>
+    </div>
+  </mz-sidenav-header>
+  <mz-sidenav-subheader>Menu</mz-sidenav-subheader>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <mz-sidenav-link>
+    <a routerLink="home" class="waves-effect">Home</a>
+  </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <!-- <mz-sidenav-link [active]="true">
+    <a routerLink="about" class="waves-effect">About Us</a>
+  </mz-sidenav-link> -->
+</mz-sidenav>
+
+
+
+
+<!-- <mz-modal #bottomSheetModal [fixedFooter]="true" [bottomSheet]="true" [options]="modalOptions">
+  <mz-modal-header>
+    <h4>Modal Title</h4>
+  </mz-modal-header>
+  <mz-modal-content>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true" mz-modal-close>Disagree</button>
+    <button mz-button [flat]="true" mz-modal-close>Agree</button>
+  </mz-modal-footer>
+</mz-modal> -->
+
+<router-outlet></router-outlet>
